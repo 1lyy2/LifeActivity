@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements BottomDialogFragm
     private ConvenientBanner mBanner;
     private List<Banner.TopStoriesBean> mList = new ArrayList<>();
     BottomDialogFragment dialogFragment;
+    private String st;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
