@@ -30,7 +30,7 @@ import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements BottomDialogFragment.OnDialogCancelListener,BottomDialogFragment.OnDialogBindViewSuccessListener{
+public class MainActivity extends AppCompatActivity implements BottomDialogFragment.OnDialogCancelListener,BottomDialogFragment.OnDialogBindViewSuccessListener,BottomDialogFragment.onDialogConfirmListener{
     public static String TAG;
     private ConvenientBanner mBanner;
     private List<Banner.TopStoriesBean> mList = new ArrayList<>();
@@ -125,6 +125,16 @@ public class MainActivity extends AppCompatActivity implements BottomDialogFragm
     public void onBindViewSuccess() {
         dialogFragment.setTitleText("厂长求带飞");
         dialogFragment.setTitleColor(getResources().getColor(R.color.colorAccent));
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        Toast.makeText(MainActivity.this,"厂长求带飞",Toast.LENGTH_SHORT);
+    }
+
+    @Override
+    public void onConfirm() {
+        Toast.makeText(MainActivity.this,"厂长求带飞",Toast.LENGTH_SHORT);
     }
 
     public class Myholder implements Holder<Banner.TopStoriesBean> {
